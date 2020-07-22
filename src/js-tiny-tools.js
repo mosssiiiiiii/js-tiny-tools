@@ -20,7 +20,7 @@
  */
 
 export const correncyProvider = (userConfig, spareConfig) => {
-  let cofig = {
+  let config = {
     unit: "TM",
     type: "raw",
     float: 2,
