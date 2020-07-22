@@ -51,37 +51,45 @@ export var correncyProvider = function correncyProvider(userConfig, spareConfig)
   switch (unit) {
     case "IRR":
       price = price.toPersianDigits();
-      if (type === "raw") price += " ریال";else if (type === "span") price = [<span className="irr-price" key="1">
-            {price}
-          </span>, <span className="irr-unit" key="0">
-            ریال
-          </span>];
+      if (type === "raw") price += " ریال";else if (type === "span") price = [React.createElement("span", {
+        className: "irr-price",
+        key: "1"
+      }, price), React.createElement("span", {
+        className: "irr-unit",
+        key: "0"
+      }, "\u0631\u06CC\u0627\u0644")];
       break;
 
     case "TM":
       price = price.toPersianDigits();
-      if (type === "raw") price += " تومان";else if (type === "span") price = [<span className="tm-price" key="1">
-            {price}
-          </span>, <span className="tm-unit" key="0">
-            تومان
-          </span>];
+      if (type === "raw") price += " تومان";else if (type === "span") price = [React.createElement("span", {
+        className: "tm-price",
+        key: "1"
+      }, price), React.createElement("span", {
+        className: "tm-unit",
+        key: "0"
+      }, "\u062A\u0648\u0645\u0627\u0646")];
       break;
 
     case "EU":
       price = price.toPersianDigits();
-      if (type === "raw") price = "€" + price;else if (type === "span") price = [<span className="eu-unit" key="1">
-            €
-          </span>, <span className="dl-price" key="0">
-            {price}
-          </span>];
+      if (type === "raw") price = "€" + price;else if (type === "span") price = [React.createElement("span", {
+        className: "eu-unit",
+        key: "1"
+      }, "\u20AC"), React.createElement("span", {
+        className: "dl-price",
+        key: "0"
+      }, price)];
       break;
 
     case "DL":
-      if (type === "raw") price = "$" + price;else if (type === "span") price = [<span className="dl-unit" key="0">
-            $
-          </span>, <span className="dl-price" key="1">
-            {price}
-          </span>];
+      if (type === "raw") price = "$" + price;else if (type === "span") price = [React.createElement("span", {
+        className: "dl-unit",
+        key: "0"
+      }, "$"), React.createElement("span", {
+        className: "dl-price",
+        key: "1"
+      }, price)];
       break;
 
     default:
